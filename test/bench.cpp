@@ -151,6 +151,9 @@ int main(int argc, char* argv[])
 
     std::map <int, socketpair>::iterator iter;
     for (iter = ms.begin(); iter != ms.end(); iter++) {
+		if (m == 1) {
+			epoll_ctl(epfd, EPOLL_CTL_DEL, epoll_sock2fd(iter->second.s1), NULL);
+		}
         closesocket(iter->second.s1);
         closesocket(iter->second.s2);
     }
