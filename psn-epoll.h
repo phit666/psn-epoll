@@ -70,7 +70,7 @@ void close(int epfd);
 #define socket_t int
 #endif
 
-/*portable functions*/
+/*portable helper functions*/
 int epoll_sock2fd(socket_t s);
 socket_t epoll_fd2sock(int fd);
 void epoll_postqueued(int epfd);
