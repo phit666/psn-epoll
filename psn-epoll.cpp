@@ -25,6 +25,7 @@
 #include <map>
 #include <mutex>
 #include "psn-epoll.h"
+#include "ntdll.h"
 #include <errno.h>
 
 #define EPOLL_MAX_FD 2000000
@@ -41,6 +42,8 @@ static int fdctr = 0;
 #endif
 
 static int closed = 0;
+
+
 
 int epoll_sock2fd(socket_t s) {
 #ifdef _WIN32
